@@ -2,13 +2,13 @@
 import java.util.Scanner;
 
 public class Date {
-  private String month;
+  private String rMonth;
   private int day;
   private int year; // a four digit number.
   private int value;
 
   public Date() {
-    month = "January";
+    rMonth = "January";
     day = 1;
     year = 1000;
   }
@@ -32,14 +32,14 @@ public class Date {
       System.exit(0);
     }
 
-    month = aDate.month;
+    rMonth = aDate.rMonth;
     day = aDate.day;
     year = aDate.year;
   }
 
   public void setDate(int monthInt, int day, int year) {
     if (dateOK(monthInt, day, year)) {
-      this.month = monthString(monthInt);
+      this.rMonth = monthString(monthInt);
       this.day = day;
       this.year = year;
     } else {
@@ -50,7 +50,7 @@ public class Date {
 
   public void setDate(String monthString, int day, int year) {
     if (dateOK(monthString, day, year)) {
-      this.month = monthString;
+      this.rMonth = monthString;
       this.day = day;
       this.year = year;
     } else {
@@ -76,7 +76,7 @@ public class Date {
       System.out.println("Fatal Error");
       System.exit(0);
     } else
-      month = monthString(monthNumber);
+      rMonth = monthString(monthNumber);
   }
 
   public void setDay(int day) {
@@ -90,7 +90,7 @@ public class Date {
 
   public int getMonth() {
 
-    return switch (month) {
+    return switch (rMonth) {
       case "January" -> 1;
       case "February" -> 2;
       case "March" -> 3;
@@ -136,16 +136,17 @@ public class Date {
   }
 
   public String toString() {
-    return (month + " " + day + ", " + year);
+    return (rMonth + " " + day + ", " + year);
   }
 
   public boolean equals(Date otherDate) {
-    return ((month.equals(otherDate.month)) && (day == otherDate.day) && (year == otherDate.year));
+    return ((rMonth.equals(otherDate.rMonth)) && (day == otherDate.day)
+        && (year == otherDate.year));
   }
 
   public boolean precedes(Date otherDate) {
     return ((year < otherDate.year) || (year == otherDate.year && getMonth() < otherDate.getMonth())
-        || (year == otherDate.year && month.equals(otherDate.month) && day < otherDate.day));
+        || (year == otherDate.year && rMonth.equals(otherDate.rMonth) && day < otherDate.day));
   }
 
   public void readInput() {
