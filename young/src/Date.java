@@ -3,14 +3,16 @@ import java.util.Scanner;
 
 public class Date {
   private String rMonth;
-  private int day;
-  private int year; // a four digit number.
-  private int value;
+  private int rDay;
+  private int rYear; // a four digit number.
+  private int rValue;
+  String x = "Fatal Error.";
+
 
   public Date() {
     rMonth = "January";
-    day = 1;
-    year = 1000;
+    rDay = 1;
+    rYear = 1000;
   }
 
   public Date(int monthInt, int day, int year) {
@@ -28,22 +30,26 @@ public class Date {
   public Date(Date aDate) {
     if (aDate == null)// Not a real date.
     {
-      System.out.println("Fatal Error.");
+      extracted();
       System.exit(0);
     }
 
     rMonth = aDate.rMonth;
-    day = aDate.day;
-    year = aDate.year;
+    rDay = aDate.rDay;
+    rYear = aDate.rYear;
+  }
+
+  private void extracted() {
+    System.out.println(x);
   }
 
   public void setDate(int monthInt, int day, int year) {
     if (dateOK(monthInt, day, year)) {
       this.rMonth = monthString(monthInt);
-      this.day = day;
-      this.year = year;
+      this.rDay = day;
+      this.rYear = year;
     } else {
-      System.out.println("Fatal Error");
+      System.out.println(x);
       System.exit(0);
     }
   }
@@ -51,10 +57,10 @@ public class Date {
   public void setDate(String monthString, int day, int year) {
     if (dateOK(monthString, day, year)) {
       this.rMonth = monthString;
-      this.day = day;
-      this.year = year;
+      this.rDay = day;
+      this.rYear = year;
     } else {
-      System.out.println("Fatal Error");
+      System.out.println(x);
       System.exit(0);
     }
   }
@@ -65,15 +71,15 @@ public class Date {
 
   public void setYear(int year) {
     if ((year < 1000) || (year > 9999)) {
-      System.out.println("Fatal Error");
+      System.out.println(x);
       System.exit(0);
     } else
-      this.year = year;
+      this.rYear = year;
   }
 
   public void setMonth(int monthNumber) {
     if ((monthNumber <= 0) || (monthNumber > 12)) {
-      System.out.println("Fatal Error");
+      System.out.println(x);
       System.exit(0);
     } else
       rMonth = monthString(monthNumber);
@@ -81,12 +87,11 @@ public class Date {
 
   public void setDay(int day) {
     if ((day <= 0) || (day > 31)) {
-      System.out.println("Fatal Error");
+      System.out.println(x);
       System.exit(0);
     } else
-      this.day = day;
+      this.rDay = day;
   }
-
 
   public int getMonth() {
 
@@ -105,7 +110,7 @@ public class Date {
       case "December" -> 12;
 
       default -> {
-        System.out.println("Fatal Error");
+        System.out.println(x);
         System.exit(0);
         yield 0; // Needed to keep the compiler happy
       }
@@ -128,25 +133,26 @@ public class Date {
    */
 
   public int getDay() {
-    return day;
+    return rDay;
   }
 
   public int getYear() {
-    return year;
+    return rYear;
   }
 
   public String toString() {
-    return (rMonth + " " + day + ", " + year);
+    return (rMonth + " " + rDay + ", " + rYear);
   }
 
   public boolean equals(Date otherDate) {
-    return ((rMonth.equals(otherDate.rMonth)) && (day == otherDate.day)
-        && (year == otherDate.year));
+    return ((rMonth.equals(otherDate.rMonth)) && (rDay == otherDate.rDay)
+        && (rYear == otherDate.rYear));
   }
 
   public boolean precedes(Date otherDate) {
-    return ((year < otherDate.year) || (year == otherDate.year && getMonth() < otherDate.getMonth())
-        || (year == otherDate.year && rMonth.equals(otherDate.rMonth) && day < otherDate.day));
+    return ((rYear < otherDate.rYear)
+        || (rYear == otherDate.rYear && getMonth() < otherDate.getMonth())
+        || (rYear == otherDate.rYear && rMonth.equals(otherDate.rMonth) && rDay < otherDate.rDay));
   }
 
   public void readInput() {
@@ -196,8 +202,6 @@ public class Date {
     };
   }
 
-
-
   /*
    * private boolean monthOK(String month) { return (month.equals("January") ||
    * month.equals("February") || month.equals("March") || month.equals("April") ||
@@ -205,8 +209,6 @@ public class Date {
    * || month.equals("September") || month.equals("October") || month.equals("November") ||
    * month.equals("December")); }
    */
-
-
 
   public String monthString(int monthNumber) {
     String monthName;
@@ -226,7 +228,7 @@ public class Date {
       case 12 -> "December";
 
       default -> {
-        System.out.println("Fatal Error");
+        System.out.println(x);
         System.exit(0);
         yield "Error"; // to keep the compiler happy
       }
@@ -248,8 +250,6 @@ public class Date {
  * defalut -> { System.out.println("Fatal Error"); System.exit(0); yield "Error"; // to keep the
  * compiler happy } };
  **/
-
-
 
 /*
  * switch (monthNumber) { case 1: return "January"; case 2: return "February"; case 3: return
