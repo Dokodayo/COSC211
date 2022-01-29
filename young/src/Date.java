@@ -24,7 +24,14 @@ public class Date {
   }
 
   public Date(int year) {
-    setDate(1, 1, year);
+    if (dateOK(1, 1, year)) {
+      this.rMonth = monthString(1);
+      this.rDay = 1;
+      this.rYear = year;
+    } else {
+      System.out.println(x);
+      System.exit(0);
+    }
   }
 
   public Date(Date aDate) {
