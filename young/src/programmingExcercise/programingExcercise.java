@@ -75,5 +75,5 @@ public class programingExcercise {
         + inputArray[p2][1] + ", " + inputArray[p2][2] + ")");
 
   }
-
+  // 8.7
 }
