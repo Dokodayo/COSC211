@@ -7,7 +7,7 @@ class inputArrayTest {
 
   @Test
   void testInputArray() {
-    System.out.println("Enter 4, 5, 10, 22, 3 ");
+    System.out.println("Enter 4, 5, 10");
 
 
     double[] myArr = programingExcercise.inputArray();
@@ -16,6 +16,7 @@ class inputArrayTest {
     Assert.assertTrue(myArr[1] == 5);
     Assert.assertTrue(myArr[2] == 10);
     Assert.assertTrue(myArr.length == 3);
+
   }
 
 }

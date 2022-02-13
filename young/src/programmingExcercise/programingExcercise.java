@@ -1,4 +1,5 @@
 package programmingExcercise;
+
 import java.util.Scanner;
 
 public class programingExcercise {
@@ -45,23 +46,20 @@ public class programingExcercise {
 
   public static int[] closestPoints(double[][] inputArray) {
 
-    // p1 and p2 are the indices in the points array
-    int p1 = 0, p2 = 1; // Initial two points
+    // indices in the point array. Setting initial two points with var p1 and var p2
+    int p1 = 0, p2 = 1;
     double shortestDistance = distance(inputArray[p1][0], inputArray[p1][1], inputArray[p1][2],
-        inputArray[p2][0], inputArray[p2][1], inputArray[p2][2]); // Initialize
-    // shortestDistance
+        inputArray[p2][0], inputArray[p2][1], inputArray[p2][2]); //
 
     for (int i = 0; i < inputArray.length; i++) {
       for (int j = i + 1; j < inputArray.length; j++) {
         double distance = distance(inputArray[i][0], inputArray[i][1], inputArray[i][2],
-            inputArray[j][0], inputArray[j][1], inputArray[j][2]); // Find distance //26.05.16
-                                                                   // Correction made from comments
-        // below
+            inputArray[j][0], inputArray[j][1], inputArray[j][2]);
 
         if (shortestDistance > distance) {
-          p1 = i; // Update p1
-          p2 = j; // Update p2
-          shortestDistance = distance; // Update shortestDistance
+          p1 = i; // giving updated value to p1 and p2
+          p2 = j;
+          shortestDistance = distance; // update the distance too
         }
       }
     }
