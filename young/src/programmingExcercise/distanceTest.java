@@ -14,7 +14,7 @@ class distanceTest {
     double test = programingExcercise.distance(1, 1, 2, 2, 3, 3);
 
     Assert.assertTrue(test >= 0);
-
+    // 8.7
   }
 
 }

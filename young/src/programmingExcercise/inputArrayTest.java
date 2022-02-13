@@ -16,7 +16,7 @@ class inputArrayTest {
     Assert.assertTrue(myArr[1] == 5);
     Assert.assertTrue(myArr[2] == 10);
     Assert.assertTrue(myArr.length == 3);
-
+    // 8.7
   }
 
 }

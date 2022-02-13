@@ -36,7 +36,7 @@ class cloestPointsTest {
     Assert.assertTrue(pointsArr2[1] == 2); // p2 & index
 
 
-
+    // 8.7
   }
 
 }
