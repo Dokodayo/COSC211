@@ -21,8 +21,13 @@ public class Staff extends Employee {
     this.title = title;
   }
 
-  // String for description
+  /*
+   * // String for description public String toString() { return super.toString() + "\n" + "Title: "
+   * + title;
+   */
   public String toString() {
-    return super.toString() + "\n" + "Title: " + title;
+    return "Staff " + getName();
+
+
   }
 }

@@ -26,19 +26,21 @@ public class Faculty extends Employee {
   }
 
   // Returning office hours
-  /** Return officeHours */
   public String getOfficeHours() {
     return officeHours;
   }
   // Setting new office hours
 
-  /** Set new officeHours */
   public void setOfficeHours(String officeHours) {
     this.officeHours = officeHours;
   }
 
-  // Returning toString
+  /*
+   * // Returning toString public String toString() { return super.toString() + "\n" + "Rank: " +
+   * rank + "\n" + "Office hours: " + officeHours;
+   */
   public String toString() {
-    return super.toString() + "\n" + "Rank: " + rank + "\n" + "Office hours: " + officeHours;
+    return "Faculty " + getName();
+
   }
 }

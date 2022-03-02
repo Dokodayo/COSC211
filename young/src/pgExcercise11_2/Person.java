@@ -59,9 +59,14 @@ public class Person {
     this.email = email;
   }
 
-  // Return string description
+  /*
+   * // Return string description public String toString() { return "\n" + "Name: " + name + "\n" +
+   * "Address: " + address + "\n" + "Phone Number: " + phone + "\n" + "Email Address: " + email;
+   */
+
+  // Returning a toString
   public String toString() {
-    return "\n" + "Name: " + name + "\n" + "Address: " + address + "\n" + "Phone Number: " + phone
-        + "\n" + "Email Address: " + email;
+    return "Person " + getName();
+
   }
 }

@@ -35,8 +35,17 @@ public class Student extends Person {
     }
   }
 
-  // Return string for description
+  /*
+   * // Return string for description public String toString() { return super.toString() + "\n" +
+   * "Status: " + getStatus();
+   */
+
   public String toString() {
-    return super.toString() + "\n" + "Status: " + getStatus();
+    return "Student " + getName();
+
+
   }
+
+
+
 }
