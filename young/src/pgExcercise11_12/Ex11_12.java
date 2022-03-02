@@ -3,8 +3,9 @@ package pgExcercise11_12;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ex11_12 {
+public class Ex11_12 {
 
+  /*
   public static void main(String[] args) {
     // Main Method
 
@@ -21,7 +22,8 @@ public class ex11_12 {
     // Display the sum of the list
     System.out.println("Sum of inputs are: " + sum(list));
   }
-
+*/
+  
   // Return the numbers to ArrayList
   public static double sum(ArrayList<Double> list) {
     double sum = 0;
@@ -30,4 +32,5 @@ public class ex11_12 {
     }
     return sum;
   }
+
 }

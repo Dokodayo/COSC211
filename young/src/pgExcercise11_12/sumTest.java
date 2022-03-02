@@ -1,17 +1,31 @@
 package pgExcercise11_12;
 
+import java.util.ArrayList;
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class sumTest {
+public class sumTest {
 
   @Test
-  void testSum() {
-    System.out.println("Array has 1, 2, 3, 4, 5");
-    double[] list = {1, 2, 3, 4, 5};
-    double test = ex11_12.sum(list);
+  public void sumTest() {
 
-    Assert.assertTrue(test == 15);
+    ArrayList<Double> testL = new ArrayList<>();
+
+    testL.add(1.0);
+    testL.add(2.0);
+    testL.add(3.0);
+    testL.add(4.0);
+    testL.add(5.3);
+
+    // call double method
+    double actual = Ex11_12.sum(testL);
+    double expected = 15.3;
+
+    Assert.assertEquals(expected, actual, 0.0000001);
+
+    // assertEquals(expected, actual);
+
+
 
   }
 
